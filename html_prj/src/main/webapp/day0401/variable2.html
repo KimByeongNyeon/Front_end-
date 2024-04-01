@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<style = "text/css">
+	
+	
+</style>
+<script = "text/javascript">
+	//상수 (변수의 값 변경 불가)
+	const msg = "javascript";
+	
+	document.write(msg + "<br>");
+	
+	/*let : - hoisting을 막을 때 사용. (존재하지 않는 변수를 사용하게 되는 상황을 막기 위해)
+	같은 이름의 변수를 중복 선언하지 못하게 막기 위해서
+	*/
+	
+	var temp = "같은 이름의 변수";
+	var temp = "같은 이름의 변수2";// var로는 같은 이름의 변수를 여러 개 선언할 수 있다.
+	
+	document.write(temp + "<br>");
+	/* let을 사용하면 같은 이름의 변수 선언을 막을 수 있다
+	*/
+	
+	let temp2 = "같은 이름의 변수";
+	//let temp2 = "같은 이름의 변수 선언 불가";
+	
+	alert(msg2);// hoisting
+	// => 문제 : 아랫 줄의 변수가 선언되지 않았을 때 에러를 발생시킬 수 있다.	
+	var msg2 = "쉬었다가 하겠습니다.";
+	
+	alert(msg3);
+	let msg3 = "호이스팅 막기";
+</script>
+<body>
+
+</body>
+</html>

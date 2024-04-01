@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style type = "text/css">
+	table{ border: 1px solid #333; border-spacing: 0px; }
+	th,td{ border: 1px solid #333; }
+	@media screen and (max-width:800px){
+		.color{ color: #FF0000; }
+		#numTitle{ width: 200px; }
+		#nameTitle{ width: 300px; }
+	}
+	
+	@media screen and (min-width:800px){
+		.color{ color: #0000FF}
+		#numTitle{width: 200px;}
+		#nameTitle{width: 300px;}
+	}
+</style>
+</head>
+<body>
+<div class = "color">
+	브라우저의 넓이가 800px까지 글자의 색이 빨간색으로 변경 됩니다.
+	800px 이상부터는 글자의 색을 파란색으로 변경합니다.
+</div>
+</body>
+</html>
