@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>배열</title>
+<style type="text/css">
+	
+</style>
+<script type="text/javascript">
+	//1. 생성) var 배열명 = new Array(); 방의 수를 설정하지 않는다.
+	var array = new Array();
+	console.log(typeof(array));
+	//2. 값 할당) 배열명[인덱스] = 값;
+	array[0] = 2024;
+	array[1] = 4;
+	array[2] = 1;
+	array[3] = "오늘은 사주팔자의 날";
+	
+	
+	document.write("arr[0] " +array[0]+",arr[1] " + array[1]+ "<br/>");
+	document.write(`arr[0] = ${array[0] }, arr[1]= ${array[1] } <br />`);
+	document.write("방의 수 "+ array.length+ "<br/>");
+	//3. 값 얻기)배열명 [인덱스];
+	document.write("<ol>");
+	for(var i = 0; i < array.length; i++){
+		document.write(`<li>array[${i}] = ${array[i]}`);
+		console.log(`array[${i}] = ${array[i]}`);
+	}
+	document.write("</ol>");
+	
+	let names = ["윤웅찬","김병년","진수현","이명화","최수연"];
+	document.write("<select>");
+		for(var i=0; i < names.length; i++){
+			document.write(`<option>${ names[i] }</option>`);
+		}
+		var chk;
+		for(var i=0; i < names.length; i++){
+			chk="";
+			if(names[i] === "김병년"){
+				chk=" checked= 'checked'"
+			}
+			document.write(`<input type = "radio" name = "names" ${chk}/>${names[i]}`);
+		}
+</script>
+</head>
+<body>
+
+</body>
+</html>

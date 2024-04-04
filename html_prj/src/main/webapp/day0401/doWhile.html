@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="UTF-8">
+	<title>Insert title here</title>
+	<style type="text/css">
+		div {
+			width: 100px;
+			height: 100px;
+			border: 1px solid #333;
+			border-radius: 50px;
+			background-color: blue;
+		}
+
+		.red {
+			background-color: #ff0000;
+		}
+
+		.blue {
+			background-color: #0000ff;
+		}
+
+	</style>
+	<script type="text/javascript">
+		var nowYear = parseInt("2024");
+		var year = parseInt(prompt("태어난 해를 입력해 주세요"));
+		//태어난 해를 입력받아 나이 구하여 console에 출력
+		document.write(nowYear - year);
+
+		var gender = prompt("성별을 입력해주세요");
+		if (gender == "남자") {
+			bgcolor = "red";
+		}
+		if (gender == "여자"){
+			bgcolor = "blue";
+		}
+			document.write("<div class = '"+bgcolor+"'></div>");
+		
+		</script>
+</head>
+
+<body>
+
+</body>
+
+</html>

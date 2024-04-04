@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+<style type="text/css">
+	div{
+		border: 1px solid #333;
+		width: 400px;
+		height: 300px;
+		overflow: auto;
+		margin-top:20px;
+	}
+</style>
+<script type="text/javascript">
+	function useMath() {
+		let divNode = document.getElementById("output");
+		//alert(divNode);
+		let output ="<strong>수학함수 사용</strong><br/>";
+		output += "<ul>";
+		var i = -4;
+		output+= `<li>abs : ${i}의 절대값 ${Math.abs(i)}</li>`;
+		var i = 4.5;
+		output+= `<li>round : ${i}를 반올림 ${Math.round(i)}</li>`;
+		var i = 4.1;
+		output+= `<li>ceil : ${i}를 올림 ${Math.ceil(i)}</li>`;
+		var i = 4.9;
+		output+= `<li>floor : ${i}를 올림 ${Math.floor(i)}</li>`;
+		var i = Math.random();
+		output+= `<li>random : ${i}</li>`;
+		var i = "2024.04";
+		output+=`<li>parseInt : ${i}(${typeof(i)})를 정수변환 ${parseInt(i)}(${typeof(i)})</li>`;
+		output += "</ul>";
+		divNode.innerHTML=output;
+	}
+	function useDice() {
+		let divNode = document.getElementById("output2");
+		let output2 ="<strong>주사위 굴리기</strong><br/>";
+		var i = parseInt(Math.random()*6)+1;
+		var j = parseInt(Math.random()*6)+1;
+		output2+=`<img src = "../images/dice_${i}.png"></img> <img src = "../images/dice_${j}.png"></img>`;
+		divNode.innerHTML=output2;
+	}
+</script> 
+</head>
+<body>
+<input type ="button" value="Math 사용" class="btn btn-success btn-sm" onclick="useMath()"/>
+<input type ="button" value="Math 사용" class="btn btn-success btn-sm" onclick="useDice()"/>
+<div id="output">
+
+</div>
+<div id="output2">
+	
+</div>
+</body>
+</html>

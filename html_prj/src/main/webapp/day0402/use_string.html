@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="UTF-8">
+	<title>Insert title here</title>
+
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+		integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+		integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+		crossorigin="anonymous"></script>
+	<style type="text/css">
+		div {
+			width: 600px;
+			height: 400px;
+			border: 1px solid #333;
+			margin: 10px;
+			overflow: auto;
+		}
+
+		.btnMargin {
+			margin-left: 10px;
+		}
+
+		div2 {
+			width: 300px;
+			height: 200px;
+			border: 1px solid #333;
+			margin: 10px;
+			overflow: auto;
+		}
+	</style>
+	<script type="text/javascript">
+		function generateRandomPassword(length) {
+			var charset = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789";
+			var pass = "";
+			for (var i = 0; i < length; i++) {
+				var randomIndex = Math.floor(Math.random() * charset.length);
+				pass += charset[randomIndex];
+			}
+			return pass;
+		}
+
+		function password(length) {
+			let divNode = document.getElementById("pass");
+			var pass = generateRandomPassword(length);
+			divNode.innerHTML = pass;
+		}
+
+		function useString() {
+			let divNode = document.getElementById("output");
+			let output = "";
+			var msg = "javascript";
+			output += `<li>[${msg}]의 'a'를 찾아서 'k'로 변경 [${msg.replaceAll("a", "k")}]</li>`;
+			output += `<li>[${msg}]가 \"java\"로 시작하는지? ${msg.startsWith("java")}</li>`;
+			output += `<li>[${msg}]가 \"t\"로 끝나는지? ${msg.endsWith("t")}</li>`;
+			msg = "java,Oracle,JDBC,HTML,CSS,JavaScript"; //CSV
+
+			//split() : CSV데이터를 구분하여 일차원 배열로 얻을 때 
+
+			var subject = msg.split(",");
+			for (var i = 0; i < subject.length; i++) {
+				if (subject[i] == "JDBC") {
+					output += `<li>[${subject[i].toLowerCase()}]</li>`
+				} else {
+					output += `<li>[${subject[i]}]</li>`;
+
+				}
+			}
+
+
+
+			divNode.innerHTML = output;
+
+		}
+		function newPass() {
+			let divNode = document.getElementById("password");
+			var i = parseInt(Math.random()*8)+1;
+			var charset = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789";
+			var output = "";
+			for (var j = 0; j < 8; j++){
+				var randomIndex = Math.floor(Math.random() * charset.length);
+				output += `${charset[randomIndex]}`;
+			}
+			
+			divNode.innerHTML = output;
+		}
+	</script>
+</head>
+
+<body>
+	<div id="output"></div>
+	<input type="button" value="문자열 함수 사용" class="btn btn-info btn-sm btnMargin" onclick="useString()" />
+	<span id="password"></span>
+	<input type="button" value="비번생성" class="btn btn-info btn-sm btnMargin" onclick="newPass()" />
+</body>
+
+</html>
