@@ -107,8 +107,9 @@
     </style>
 	<script type="text/javascript">
 		window.onload=function(){
-			document.getElementById("email").addEventListener("keydown",keyChk)
-			document.getElementById("pass").addEventListener("keydown",keyChk)
+			document.getElementById("email").addEventListener("keydown",keyChk);
+			document.getElementById("pass").addEventListener("keydown",keyChk);
+			document.getElementById("btnLogin").addEventListener("click",chkNull);
 		}//function
 		
 		function keyChk(evt) {
@@ -210,7 +211,7 @@
         Remember me
       </label>
     </div>
-    <input type="button" class="btn btn-primary w-100 py-2" value="sign in"></button>
+    <input type="button" id="btnLogin" value="sign in"></button>
     <p class="mt-5 mb-3 text-body-secondary">&copy; 내가 만듦ㅋ</p>
   </form>
 </main>
